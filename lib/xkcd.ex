@@ -1,4 +1,6 @@
 defmodule Xkcd do
+  alias Xkcd.Comic
+
   def number(integer) do
     "http://xkcd.com/#{integer}/info.0.json"
     |> get_comic
