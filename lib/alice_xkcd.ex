@@ -1,0 +1,2 @@
+defmodule AliceXkcd do
+end
