@@ -13,10 +13,17 @@ defmodule AliceXkcd.Mixfile do
   end
 
   def application do
+    [applications: [:httpoison]]
   end
 
   defp deps do
-    []
+    [
+      {:websocket_client, github: "jeremyong/websocket_client"},
+      {:alice, "~> 0.1.4"},
+      {:poison, "~> 2.0"},
+      {:httpoison, "~> 0.8.0"}
+    ]
+  end
 
   defp package do
     [files: ["lib", "config", "mix.exs", "README*"],
