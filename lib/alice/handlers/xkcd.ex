@@ -5,7 +5,8 @@ defmodule Alice.Handlers.Xkcd do
   route ~r/\bxkcd( latest)?\z/, :latest
   route ~r/\bxkcd random\b/, :random
 
-  def handle(conn, :number) do
+  @doc "`xkcd <number>` - get a specific XKCD"
+  def number(conn) do
     conn.message.captures
     |> Enum.reverse
     |> hd
@@ -16,7 +17,14 @@ defmodule Alice.Handlers.Xkcd do
     end
     |> comic_reply(conn)
   end
-  def handle(conn, name) when name in [:latest, :random] do
+
+  @doc "`xkcd [latest]` - get the latest XKCD"
+  def latest(conn), do: handle(conn, :latest)
+
+  @doc "`xkcd random` - get a random XKCD"
+  def random(conn), do: handle(conn, :random)
+
+  defp handle(conn, name) do
     apply(Xkcd, name, [])
     |> comic_reply(conn)
   end
