@@ -5,6 +5,8 @@ A handler for [Alice Slack bot]. Retrieves latest, specific and random [XKCD] co
 [Alice Slack bot]: https://github.com/alice-bot/alice
 [XKCD]: http://xkcd.com/
 
+![](http://i.imgur.com/og5mC1v.png)
+
 ## Installation
 
 If [available in Hex](https://hex.pm/packages/alice_xkcd), the package can be installed as:
