@@ -1,5 +1,9 @@
 # AliceXkcd
 
+[![Hex.pm](https://img.shields.io/hexpm/l/alice_xkcd.svg)](https://hex.pm/packages/alice_xkcd)
+[![Hex.pm](https://img.shields.io/hexpm/v/alice_xkcd.svg)](https://hex.pm/packages/alice_xkcd)
+[![Hex.pm](https://img.shields.io/hexpm/dt/alice_xkcd.svg)](https://hex.pm/packages/alice_xkcd)
+
 A handler for [Alice Slack bot]. Retrieves latest, specific and random [XKCD] comics.
 
 [Alice Slack bot]: https://github.com/alice-bot/alice
