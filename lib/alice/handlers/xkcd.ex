@@ -1,9 +1,9 @@
 defmodule Alice.Handlers.Xkcd do
   use Alice.Router
 
-  route ~r/\bxkcd (\d+)\b/, :number
-  route ~r/\bxkcd( latest)?\z/, :latest
-  route ~r/\bxkcd random\b/, :random
+  route ~r/\bxkcd (\d+)\z/i, :number
+  route ~r/\bxkcd( latest)?\z/i, :latest
+  route ~r/\bxkcd random\z/i, :random
 
   @doc "`xkcd <number>` - get a specific XKCD"
   def number(conn) do
@@ -13,7 +13,7 @@ defmodule Alice.Handlers.Xkcd do
     |> Integer.parse
     |> case do
       {number, _} -> Xkcd.number(number)
-      :error      -> "Not A Number"
+      :error      -> {:error, "Please pass a valid number."}
     end
     |> comic_reply(conn)
   end
@@ -30,7 +30,9 @@ defmodule Alice.Handlers.Xkcd do
   end
 
   defp comic_reply({:ok, comic=%Xkcd.Comic{}}, conn) do
-    conn = reply("*#{comic.num}* #{comic.title}: _#{comic.alt}_", conn)
-    reply(comic.img, conn)
+    conn
+    |> reply("*#{comic.num}* #{comic.title}: _#{comic.alt}_")
+    |> reply(comic.img)
   end
+  defp comic_reply({:error, message}, conn), do: message |> reply(conn)
 end
