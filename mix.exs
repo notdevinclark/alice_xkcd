@@ -13,15 +13,14 @@ defmodule AliceXkcd.Mixfile do
   end
 
   def application do
-    [applications: [:httpoison]]
+    [applications: [:xkcd]]
   end
 
   defp deps do
     [
       {:websocket_client, github: "jeremyong/websocket_client"},
       {:alice, "~> 0.2.0"},
-      {:poison, "~> 2.0"},
-      {:httpoison, "~> 0.8.0"}
+      {:xkcd, "~> 0.0.1"}
     ]
   end
 
