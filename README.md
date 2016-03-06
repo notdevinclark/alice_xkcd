@@ -22,7 +22,7 @@ If [available in Hex](https://hex.pm/packages/alice_xkcd), the package can be in
        [
          {:websocket_client, github: "jeremyong/websocket_client"},
          {:alice, "~> 0.2.0"},
-         {:alice_xkcd, "~> 0.0.1"}
+         {:alice_xkcd, "~> 0.0.2"}
        ]
     end
     ```
