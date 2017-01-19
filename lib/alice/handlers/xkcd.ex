@@ -8,7 +8,7 @@ defmodule Alice.Handlers.Xkcd do
   @doc "`xkcd <number>` - get a specific XKCD"
   def number(conn) do
     conn
-    |> Alice.Conn.last_capture(conn)
+    |> Alice.Conn.last_capture
     |> Integer.parse
     |> case do
       {number, _} -> Xkcd.number(number)
