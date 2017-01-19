@@ -18,7 +18,6 @@ defmodule AliceXkcd.Mixfile do
 
   defp deps do
     [
-      {:websocket_client, github: "jeremyong/websocket_client"},
       {:alice, "~> 0.3"},
       {:xkcd, "~> 0.0.1"}
     ]
