@@ -19,7 +19,8 @@ defmodule AliceXkcd.Mixfile do
   defp deps do
     [
       {:alice, "~> 0.3"},
-      {:xkcd, "~> 0.0.1"}
+      {:xkcd, "~> 0.0.1"},
+      {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
 
