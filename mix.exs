@@ -4,12 +4,12 @@ defmodule AliceXkcd.Mixfile do
   def project do
     [app: :alice_xkcd,
      version: "0.0.4",
-     elixir: "~> 1.2",
+     elixir: "~> 1.5",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      description: "A handler for the Alice Slack bot. Retrieves latest, specific and random XKCD comics.",
-     package: package,
-     deps: deps]
+     package: package(),
+     deps: deps()]
   end
 
   def application do
@@ -19,7 +19,7 @@ defmodule AliceXkcd.Mixfile do
   defp deps do
     [
       {:alice, "~> 0.3"},
-      {:xkcd, "~> 0.0.1"},
+      {:xkcd, "~> 0.0.3"},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]
   end
